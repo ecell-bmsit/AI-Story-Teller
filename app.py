@@ -5,10 +5,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 app = Flask(__name__)
 
-# Set your OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'api_key'
 
-# Function to generate a story using OpenAI API
 def generate_story(prompt):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
@@ -19,7 +17,6 @@ def generate_story(prompt):
     )
     return response['choices'][0]['message']['content'].strip()
 
-# Analyze sentiment using NLTK
 def sentiment_analyse(text):
     sentiment_analyzer = SentimentIntensityAnalyzer()
     sentiment = sentiment_analyzer.polarity_scores(text)
