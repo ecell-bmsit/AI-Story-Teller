@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+}
+
+header {
+    position: relative;
+    text-align: center;
+}
+
+.banner_img {
+    width: 100%;
+}
+
+.header_text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}   
+
+.banner_title {
+    background-color: rgba(4, 71, 133, 0.702);
+    border-radius: 10px;
+    font-size: 6em;
+    padding: 10px;
+    color: white;
+}
+
+.banner_subtitle {
+    color: white;
+    font-size: 1.1em;
+    padding: 10px;
+}
