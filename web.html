@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatima Bakery</title>
-    <link rel="stylesheet" href="style.css">
+    <title>PromptTales.co</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="home.js"></script>
 </head>
 <body>
@@ -15,3 +15,12 @@
                 <p class="banner_subtitle">Imagine sitting by a crackling fire, surrounded by generations of kin. In those ancient times, stories weren't just tales; they were the heartbeat of our shared humanity. Passed through whispers and etched on cave walls, storytelling was the lifeline of wisdom, carrying the soulful narratives of our ancestors. It was more than mere words; creating a timeless bond between individuals.</p>
             </div>
     </header>
+    <div class="user_prompt">
+        <form action="/generate_story" method="post">
+            <!-- <label for="user_input">You:</label> -->
+            <input class="user_input" type="text" id="user_input" name="user_input" value="Once upon a time..."><br>
+            <button class="submit_button" type="submit">Generate Story</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+}
+
+header {
+    position: relative;
+    text-align: center;
+}
+
+.banner_img {
+    width: 100%;
+}
+
+.header_text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}   
+
+.banner_title {
+    background-color: rgba(4, 71, 133, 0.702);
+    border-radius: 10px;
+    font-size: 6em;
+    padding: 10px;
+    color: white;
+}
+
+.banner_subtitle {
+    color: white;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.user_prompt {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 10px
+}
+
+.submit_button {
+    font-size: 110%; 
+    background-color: rgba(4, 71, 133, 0.702); 
+    border: 20px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 10px;
+}
+
+.user_input {
+    font-size: 110%; 
+    background-color: rgb(4, 71, 133); 
+    border: 20px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-top: 40px;
+}
+  
+.submit_button {
+    font-size: 1.1em; /* 10% bigger font size */
+    background-color: lightblue; /* Light blue background color */
+    margin-top: 10px; /* Adds a visible gap between buttons */
+    padding: 10px; /* Optional: Add padding for better aesthetics */
+    border: none; /* Remove default button border */
+    position: relative;
+    overflow: hidden;
+}
+
+  
+.submit_button {
+    font-size: 1.1em; /* 10% bigger font size */
+    background-color: lightblue; /* Light blue background color */
+    margin-top: 10px; /* Adds a visible gap between buttons */
+    padding: 10px; /* Optional: Add padding for better aesthetics */
+    border: none; /* Remove default button border */
+    position: relative;
+    overflow: hidden;
+    color: white; /* Set text color to white for better visibility */
+}
+
+.submit_button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00f, rgb(172, 197, 234), rgb(156, 103, 103), #00f);
+    background-size: 400% 400%;
+    opacity: 0;
+    pointer-events: none;
+    animation: glowing 3s infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 400%;
+        opacity: 0.2;
+    }
+}
+
+/* Additional styling for better visibility on hover */
+.submit_button:hover {
+    background-color: #87CEFA; /* Light sky blue on hover */
+    cursor: pointer;
+}
