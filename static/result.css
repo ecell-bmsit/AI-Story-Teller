@@ -1,0 +1,57 @@
+body.positive {
+    background-color: #bbe1ee;
+    color: rgba(255, 255, 255, 0.792);
+}
+
+body.negative {
+    background-color: #736c6c;
+    color: rgba(255, 255, 255, 0.792);
+}
+
+* {
+    margin: 0;
+    font-family: serif;
+}
+
+.container {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(6, 27, 132, 0.767);
+    border-radius: 10px;
+    margin: 10px auto; 
+    display: block; 
+    color: rgba(255, 255, 255, 0.792);
+}
+
+h2 {
+    text-align: center; 
+}
+
+.story {
+    white-space: pre-line;
+    text-align: center;
+    padding:10px;
+    background-color: rgba(4, 11, 91, 0.702);
+    margin: 10px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.792);
+}
+
+/* p{
+    text-align: center;
+    padding:10px;
+    background-color: rgba(4, 71, 133, 0.702);
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+} */
+
+img {
+    width: 50%; 
+    display: block;
+    margin: 0 auto; 
+}

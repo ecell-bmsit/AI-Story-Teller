@@ -4,37 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generated Story</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        h2 {
-            margin-bottom: 10px;
-        }
-
-        .story {
-            white-space: pre-line;
-        }
-
-        {% if sentiment['compound'] >= 0.05 %}
-            body {background-color: #c8e6c9;}
-        {% elif sentiment['compound'] <= -0.05 %}
-            body {background-color: #ffcdd2;}
-        {% endif %}
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
 </head>
-<body>
+<body class="{% if sentiment['compound'] >= 0.05 %}positive{% elif sentiment['compound'] <= -0.05 %}negative{% endif %}">
     <div class="container">
-        <h2>Generated Story:</h2>
+        <h2>Here is what PromptTales made, just for you!</h2>
         <div class="story">{{ generated_story }}</div>
-        <h2>Sentiment Analysis:</h2>
-        <p>Compound Sentiment Score: {{ sentiment['compound'] }}</p>
     </div>
+    {% if sentiment['compound'] >= 0.05 %}
+    <audio autoplay loop>
+        <source src="{{ url_for('static', filename='background_music.mp3') }}" type="audio/mp3">
+    </audio>; 
+    {% elif sentiment['compound'] <= -0.05 %}
+    <audio autoplay loop>
+        <source src="{{ url_for('static', filename='tense.mp3') }}" type="audio/mp3">
+    </audio>;
+    {% endif %}
+
+    <img src="{{ generated_image_url }}" alt="Generated Image">
 </body>
 </html>

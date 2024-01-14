@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 import openai
 from clean import generate_images 
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+# from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from my_nltk import SentimentIntensityAnalyzer
 
 app = Flask(__name__)
 
-openai.api_key = 'api_key'
+openai.api_key = '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'
 
 def generate_story(prompt):
     response = openai.ChatCompletion.create(
@@ -16,6 +17,15 @@ def generate_story(prompt):
         ],
     )
     return response['choices'][0]['message']['content'].strip()
+
+def genimg(prompt):
+    response = openai.Image.create(
+        prompt=prompt,
+        n=1,
+        size="1024x1024"
+    )
+    image_url = response['data'][0]['url']
+    return image_url.strip()
 
 def sentiment_analyse(text):
     sentiment_analyzer = SentimentIntensityAnalyzer()
@@ -32,10 +42,9 @@ def generate_story_route():
     input_text = open('read.txt', 'r').read()
     combined_text = f"{input_text}\n\nUser: {user_input}\nChatbot:"
     generated_story = generate_story(combined_text)
-    generated_images = generate_images(generated_story)
-    sentiment = sentiment_analyse(generated_story)
-
-    return render_template('result.html', generated_story=generated_story, sentiment=sentiment)
+    generated_image_url = genimg(combined_text)
+    sentiment_result = sentiment_analyse(combined_text)
+    return render_template('result.html', generated_story=generated_story, sentiment=sentiment_result, generated_image_url=generated_image_url)
 
 if __name__ == '__main__':
     app.run(debug=True)
