@@ -6,7 +6,7 @@ from my_nltk import SentimentIntensityAnalyzer
 
 app = Flask(__name__)
 
-openai.api_key = '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'
+openai.api_key = 'api_key'
 
 def generate_story(prompt):
     response = openai.ChatCompletion.create(
